@@ -1,5 +1,5 @@
 // Generated from C:/Users/Kenneth/IdeaProjects/MonkeyParser\MonkeyParser.g4 by ANTLR 4.7
-
+package generated;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
