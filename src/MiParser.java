@@ -105,6 +105,217 @@ public class MiParser {
             }
         }
 
-        private void a
+        private void multiplicationFactor(){
+            while(this.actualToken.getType() == scanner.getTokenType("MUL")
+                    || this.actualToken.getType() == scanner.getTokenType("DIV")){
+                    if(this.actualToken.getType() == scanner.getTokenType("MUL")){
+                        accept();
+                        elementExpression();
+                    }else{
+                        accept("MUL");
+                    }
+                    if(this.actualToken.getType() == scanner.getTokenType("DIV")){
+                            accept();
+                        elementExpression();
+                    }else{
+                        accept("DIV");
+                    }
+            }
+        }
+
+        private void elementAccess(){
+            if(this.actualToken.getType() == scanner.getTokenType("PCIZQ")){
+                accept();
+                expression();
+                if(this.actualToken.getType() == scanner.getTokenType("PCDER")){
+                    accept();
+                }else{
+                    accept("PCDER");
+                }
+            }else{
+                accept("PCIZQ");
+            }
+        }
+
+        private void callExpression(){
+            if(this.actualToken.getType() == scanner.getTokenType("PIZQ")){
+                accept();
+                expressionList();
+                if(this.actualToken.getType() == scanner.getTokenType("PDER")){
+                    accept();
+                }else {
+                    accept("PDER");
+                }
+            }else {
+                accept("PIZQ");
+            }
+        }
+
+        private void arrayFunctions() {
+            if (this.actualToken.getType() == scanner.getTokenType("LEN")) {
+                accept();
+            } else {
+                accept("LEN");
+            }
+            if (this.actualToken.getType() == scanner.getTokenType("FIRST")) {
+                accept();
+            } else {
+                accept("FIRST");
+            }
+            if(this.actualToken.getType() == scanner.getTokenType("LAST")){
+                accept();
+            }else {
+                accept("LAST");
+            }
+            if(this.actualToken.getType() == scanner.getTokenType("REST")){
+                accept();
+            }else {
+                accept("REST");
+            }
+            if(this.actualToken.getType() == scanner.getTokenType("PUSH")){
+                accept();
+            }else {
+                accept("PUSH");
+            }
+        }
+
+        private void arrayLiteral(){
+            if(this.actualToken.getType() == scanner.getTokenType("PCIZQ")){
+                accept();
+                expressionList();
+                if(this.actualToken.getType() == scanner.getTokenType("PCDER")){
+                    accept();
+                }else {
+                    accept("PCDER");
+                }
+            }else {
+                accept("PCIZQ");
+            }
+        }
+
+        private void functionLiteral(){
+            if(this.actualToken.getType() == scanner.getTokenType("FN")){
+                accept();
+                if(this.actualToken.getType() == scanner.getTokenType("PIZQ")){
+                    accept();
+                    functionParameters();
+                    if(this.actualToken.getType() == scanner.getTokenType("PDER")){
+                        accept();
+                        blockStatement();
+                    }else {
+                        accept("PDER");
+                    }
+                }else {
+                    accept("PIZQ");
+                }
+            }else {
+                accept("FN");
+            }
+        }
+
+        private void functionParameters(){
+            if(this.actualToken.getType() == scanner.getTokenType("ID")){
+                accept();
+                moreIdentifiers();
+            }else {
+                accept("ID");
+            }
+        }
+
+        private void moreIdentifiers(){
+
+            while (this.actualToken.getType() == scanner.getTokenType("COMA")){
+                if(this.actualToken.getType() == scanner.getTokenType("COMA")){
+                    accept();
+                    if(this.actualToken.getType() == scanner.getTokenType("ID")){
+                        accept();
+                    }else {
+                        accept("ID");
+                    }
+                }else {
+                    accept("COMA");
+                }
+            }
+        }
+
+        private void hashLiteral(){
+            if(this.actualToken.getType() == scanner.getTokenType("LLAVEIZQ")){
+                accept();
+                hashContent();
+                moreHashContent();
+                if(this.actualToken.getType() == scanner.getTokenType("LLAVEDER")){
+                    accept();
+                }else {
+                    accept("LLAVEDER");
+                }
+            }else {
+                accept("LLAVEIZQ");
+            }
+        }
+
+        private void moreHashContent(){
+            while(this.actualToken.getType() == scanner.getTokenType("COMA")){
+                if(this.actualToken.getType() == scanner.getTokenType("COMA")){
+                    accept();
+                    hashContent();
+                }else {
+                    accept("COMA");
+                }
+            }
+        }
+
+        private void moreExpressions(){
+            while(this.actualToken.getType() == scanner.getTokenType("COMA")){
+                if(this.actualToken.getType() == scanner.getTokenType("COMA")){
+                    accept();
+                    expression();
+                }else {
+                    accept("COMA");
+                }
+            }
+        }
+
+        private void printExpression(){
+            if(this.actualToken.getType() == scanner.getTokenType("PUTS")){
+                accept();
+                if(this.actualToken.getType() == scanner.getTokenType("PIZQ")){
+                    accept();
+                    expression();
+                    if(this.actualToken.getType() == scanner.getTokenType("PDER")){
+                        accept();
+                    }else {
+                        accept("PDER");
+                    }
+                }else {
+                    accept("PIZQ");
+                }
+            }else {
+                accept("PUTS");
+            }
+        }
+
+        private void ifExpression(){
+            if(this.actualToken.getType() == scanner.getTokenType("IF")){
+                accept();
+                expression();
+                blockStatement();
+
+                if(this.actualToken.getType() == scanner.getTokenType("ELSE")){
+                    accept("ELSE");
+                    blockStatement();
+                }
+            }else {
+                accept("IF");
+            }
+        }
+
+        private void blockStatement(){
+            if(this.actualToken.getType() == scanner.getTokenType("LLAVEIZQ")){
+                accept();
+
+            }else {
+                accept("LLAVEIZQ");
+            }
+        }
 
 }
