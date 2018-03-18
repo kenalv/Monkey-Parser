@@ -20,8 +20,8 @@ comparison: ((MAYORK
 additionExpression: multiplicationExpression additionFactor                    #additionExpressiona;
 additionFactor: (( SUMA | RESTA ) multiplicationExpression)*                   #additionFactorDesignator;
 multiplicationExpression: elementExpression multiplicationFactor               #multiplicationExpressiona;
-multiplicationFactor: (( MUL | DIV ) elementExpression )*;
-elementExpression: primitiveExpression (elementAccess | callExpression | WS)    #elementExpressiona;
+multiplicationFactor: (( MUL | DIV ) elementExpression )*                      #multiplicationFactora;
+elementExpression: primitiveExpression (elementAccess | callExpression | WS)   #elementExpressiona;
 elementAccess    : PCIZQ expression PCDER                                      #elementAccessa;
 callExpression: PIZQ expressionList PDER                                       #callExpressionExprL;
 primitiveExpression: INT                                                       #primitiveExpressionInt

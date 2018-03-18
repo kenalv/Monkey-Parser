@@ -1,8 +1,4 @@
-let x,y;
+let x = 0;
+let y = 1;
 
-if (var) {
-    x = 1;
-    y = 2;
-}else{
-    y = 3;
-}
+return y;
