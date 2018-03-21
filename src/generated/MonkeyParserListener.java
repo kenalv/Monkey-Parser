@@ -1,4 +1,4 @@
-// Generated from C:/Users/Kenneth/IdeaProjects/MonkeyParser\MonkeyParser.g4 by ANTLR 4.7
+// Generated from C:/Users/Kenneth/IdeaProjects/MonkeyParser/Monkey-Parser\MonkeyParser.g4 by ANTLR 4.7
 package generated;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -152,15 +152,17 @@ public interface MonkeyParserListener extends ParseTreeListener {
 	 */
 	void exitMultiplicationExpressiona(MonkeyParser.MultiplicationExpressionaContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link MonkeyParser#multiplicationFactor}.
+	 * Enter a parse tree produced by the {@code multiplicationFactora}
+	 * labeled alternative in {@link MonkeyParser#multiplicationFactor}.
 	 * @param ctx the parse tree
 	 */
-	void enterMultiplicationFactor(MonkeyParser.MultiplicationFactorContext ctx);
+	void enterMultiplicationFactora(MonkeyParser.MultiplicationFactoraContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link MonkeyParser#multiplicationFactor}.
+	 * Exit a parse tree produced by the {@code multiplicationFactora}
+	 * labeled alternative in {@link MonkeyParser#multiplicationFactor}.
 	 * @param ctx the parse tree
 	 */
-	void exitMultiplicationFactor(MonkeyParser.MultiplicationFactorContext ctx);
+	void exitMultiplicationFactora(MonkeyParser.MultiplicationFactoraContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code elementExpressiona}
 	 * labeled alternative in {@link MonkeyParser#elementExpression}.
