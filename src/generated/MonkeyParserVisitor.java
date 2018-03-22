@@ -1,4 +1,4 @@
-// Generated from C:/Users/Kenneth/IdeaProjects/MonkeyParser/Monkey-Parser\MonkeyParser.g4 by ANTLR 4.7
+// Generated from C:/Users/Kenneth/IdeaProjects/MonkeyParser/Monkey-Parser\MonkeyParser.g4 by ANTLR 4.7.
 package generated;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 

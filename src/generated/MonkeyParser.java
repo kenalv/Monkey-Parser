@@ -327,7 +327,6 @@ public class MonkeyParser extends Parser {
 			return getRuleContext(ExpressionContext.class,0);
 		}
 		public TerminalNode PyCOMA() { return getToken(MonkeyParser.PyCOMA, 0); }
-		public TerminalNode WS() { return getToken(MonkeyParser.WS, 0); }
 		public LetStatementIdContext(LetStatementContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
@@ -347,7 +346,6 @@ public class MonkeyParser extends Parser {
 	public final LetStatementContext letStatement() throws RecognitionException {
 		LetStatementContext _localctx = new LetStatementContext(_ctx, getState());
 		enterRule(_localctx, 4, RULE_letStatement);
-		int _la;
 		try {
 			_localctx = new LetStatementIdContext(_localctx);
 			enterOuterAlt(_localctx, 1);
@@ -358,15 +356,40 @@ public class MonkeyParser extends Parser {
 			match(EQUAL);
 			setState(71);
 			expression();
-			setState(72);
-			_la = _input.LA(1);
-			if ( !(_la==PyCOMA || _la==WS) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
+			setState(74);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case PyCOMA:
+				{
+				setState(72);
+				match(PyCOMA);
+				}
+				break;
+			case EOF:
+			case PCIZQ:
+			case PIZQ:
+			case LLAVEDER:
+			case LLAVEIZQ:
+			case LET:
+			case RETURN:
+			case IF:
+			case TRUE:
+			case FALSE:
+			case FIRST:
+			case LAST:
+			case FN:
+			case PUTS:
+			case LEN:
+			case REST:
+			case PUSH:
+			case ID:
+			case STRING:
+			case INT:
+				{
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
 			}
 			}
 		}
@@ -397,7 +420,6 @@ public class MonkeyParser extends Parser {
 			return getRuleContext(ExpressionContext.class,0);
 		}
 		public TerminalNode PyCOMA() { return getToken(MonkeyParser.PyCOMA, 0); }
-		public TerminalNode WS() { return getToken(MonkeyParser.WS, 0); }
 		public ReturnStatementaContext(ReturnStatementContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
@@ -417,22 +439,46 @@ public class MonkeyParser extends Parser {
 	public final ReturnStatementContext returnStatement() throws RecognitionException {
 		ReturnStatementContext _localctx = new ReturnStatementContext(_ctx, getState());
 		enterRule(_localctx, 6, RULE_returnStatement);
-		int _la;
 		try {
 			_localctx = new ReturnStatementaContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(74);
+			setState(76);
 			expression();
-			setState(75);
-			_la = _input.LA(1);
-			if ( !(_la==PyCOMA || _la==WS) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
+			setState(79);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case PyCOMA:
+				{
+				setState(77);
+				match(PyCOMA);
+				}
+				break;
+			case EOF:
+			case PCIZQ:
+			case PIZQ:
+			case LLAVEDER:
+			case LLAVEIZQ:
+			case LET:
+			case RETURN:
+			case IF:
+			case TRUE:
+			case FALSE:
+			case FIRST:
+			case LAST:
+			case FN:
+			case PUTS:
+			case LEN:
+			case REST:
+			case PUSH:
+			case ID:
+			case STRING:
+			case INT:
+				{
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
 			}
 			}
 		}
@@ -463,7 +509,6 @@ public class MonkeyParser extends Parser {
 			return getRuleContext(ExpressionContext.class,0);
 		}
 		public TerminalNode PyCOMA() { return getToken(MonkeyParser.PyCOMA, 0); }
-		public TerminalNode WS() { return getToken(MonkeyParser.WS, 0); }
 		public ExpressionStatementaContext(ExpressionStatementContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
@@ -483,22 +528,46 @@ public class MonkeyParser extends Parser {
 	public final ExpressionStatementContext expressionStatement() throws RecognitionException {
 		ExpressionStatementContext _localctx = new ExpressionStatementContext(_ctx, getState());
 		enterRule(_localctx, 8, RULE_expressionStatement);
-		int _la;
 		try {
 			_localctx = new ExpressionStatementaContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(77);
+			setState(81);
 			expression();
-			setState(78);
-			_la = _input.LA(1);
-			if ( !(_la==PyCOMA || _la==WS) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
+			setState(84);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case PyCOMA:
+				{
+				setState(82);
+				match(PyCOMA);
+				}
+				break;
+			case EOF:
+			case PCIZQ:
+			case PIZQ:
+			case LLAVEDER:
+			case LLAVEIZQ:
+			case LET:
+			case RETURN:
+			case IF:
+			case TRUE:
+			case FALSE:
+			case FIRST:
+			case LAST:
+			case FN:
+			case PUTS:
+			case LEN:
+			case REST:
+			case PUSH:
+			case ID:
+			case STRING:
+			case INT:
+				{
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
 			}
 			}
 		}
@@ -554,9 +623,9 @@ public class MonkeyParser extends Parser {
 			_localctx = new ExpressionaContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(80);
+			setState(86);
 			additionExpression();
-			setState(81);
+			setState(87);
 			comparison();
 			}
 		}
@@ -633,13 +702,13 @@ public class MonkeyParser extends Parser {
 			_localctx = new ComparisonDesignatorContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(87);
+			setState(93);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << MAYORK) | (1L << MENORK) | (1L << MENORIGUALK) | (1L << MAYORIGUALK) | (1L << II))) != 0)) {
 				{
 				{
-				setState(83);
+				setState(89);
 				_la = _input.LA(1);
 				if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << MAYORK) | (1L << MENORK) | (1L << MENORIGUALK) | (1L << MAYORIGUALK) | (1L << II))) != 0)) ) {
 				_errHandler.recoverInline(this);
@@ -649,11 +718,11 @@ public class MonkeyParser extends Parser {
 					_errHandler.reportMatch(this);
 					consume();
 				}
-				setState(84);
+				setState(90);
 				additionExpression();
 				}
 				}
-				setState(89);
+				setState(95);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -711,9 +780,9 @@ public class MonkeyParser extends Parser {
 			_localctx = new AdditionExpressionaContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(90);
+			setState(96);
 			multiplicationExpression();
-			setState(91);
+			setState(97);
 			additionFactor();
 			}
 		}
@@ -778,13 +847,13 @@ public class MonkeyParser extends Parser {
 			_localctx = new AdditionFactorDesignatorContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(97);
+			setState(103);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==SUMA || _la==RESTA) {
 				{
 				{
-				setState(93);
+				setState(99);
 				_la = _input.LA(1);
 				if ( !(_la==SUMA || _la==RESTA) ) {
 				_errHandler.recoverInline(this);
@@ -794,11 +863,11 @@ public class MonkeyParser extends Parser {
 					_errHandler.reportMatch(this);
 					consume();
 				}
-				setState(94);
+				setState(100);
 				multiplicationExpression();
 				}
 				}
-				setState(99);
+				setState(105);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -856,9 +925,9 @@ public class MonkeyParser extends Parser {
 			_localctx = new MultiplicationExpressionaContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(100);
+			setState(106);
 			elementExpression();
-			setState(101);
+			setState(107);
 			multiplicationFactor();
 			}
 		}
@@ -923,13 +992,13 @@ public class MonkeyParser extends Parser {
 			_localctx = new MultiplicationFactoraContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(107);
+			setState(113);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==MUL || _la==DIV) {
 				{
 				{
-				setState(103);
+				setState(109);
 				_la = _input.LA(1);
 				if ( !(_la==MUL || _la==DIV) ) {
 				_errHandler.recoverInline(this);
@@ -939,11 +1008,11 @@ public class MonkeyParser extends Parser {
 					_errHandler.reportMatch(this);
 					consume();
 				}
-				setState(104);
+				setState(110);
 				elementExpression();
 				}
 				}
-				setState(109);
+				setState(115);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -981,7 +1050,6 @@ public class MonkeyParser extends Parser {
 		public CallExpressionContext callExpression() {
 			return getRuleContext(CallExpressionContext.class,0);
 		}
-		public TerminalNode WS() { return getToken(MonkeyParser.WS, 0); }
 		public ElementExpressionaContext(ElementExpressionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
@@ -1005,31 +1073,27 @@ public class MonkeyParser extends Parser {
 			_localctx = new ElementExpressionaContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(110);
+			setState(116);
 			primitiveExpression();
-			setState(114);
+			setState(120);
 			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case PCIZQ:
+			switch ( getInterpreter().adaptivePredict(_input,8,_ctx) ) {
+			case 1:
 				{
-				setState(111);
+				setState(117);
 				elementAccess();
 				}
 				break;
-			case PIZQ:
+			case 2:
 				{
-				setState(112);
+				setState(118);
 				callExpression();
 				}
 				break;
-			case WS:
+			case 3:
 				{
-				setState(113);
-				match(WS);
 				}
 				break;
-			default:
-				throw new NoViableAltException(this);
 			}
 			}
 		}
@@ -1084,11 +1148,11 @@ public class MonkeyParser extends Parser {
 			_localctx = new ElementAccessaContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(116);
+			setState(122);
 			match(PCIZQ);
-			setState(117);
+			setState(123);
 			expression();
-			setState(118);
+			setState(124);
 			match(PCDER);
 			}
 		}
@@ -1143,11 +1207,11 @@ public class MonkeyParser extends Parser {
 			_localctx = new CallExpressionExprLContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(120);
+			setState(126);
 			match(PIZQ);
-			setState(121);
+			setState(127);
 			expressionList();
-			setState(122);
+			setState(128);
 			match(PDER);
 			}
 		}
@@ -1403,14 +1467,14 @@ public class MonkeyParser extends Parser {
 		PrimitiveExpressionContext _localctx = new PrimitiveExpressionContext(_ctx, getState());
 		enterRule(_localctx, 28, RULE_primitiveExpression);
 		try {
-			setState(143);
+			setState(149);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case INT:
 				_localctx = new PrimitiveExpressionIntContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(124);
+				setState(130);
 				match(INT);
 				}
 				break;
@@ -1418,7 +1482,7 @@ public class MonkeyParser extends Parser {
 				_localctx = new PrimitiveExpressionStrContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(125);
+				setState(131);
 				match(STRING);
 				}
 				break;
@@ -1426,7 +1490,7 @@ public class MonkeyParser extends Parser {
 				_localctx = new PrimitiveExpressionIdContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(126);
+				setState(132);
 				match(ID);
 				}
 				break;
@@ -1434,7 +1498,7 @@ public class MonkeyParser extends Parser {
 				_localctx = new PrimitiveExpressionTrueContext(_localctx);
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(127);
+				setState(133);
 				match(TRUE);
 				}
 				break;
@@ -1442,7 +1506,7 @@ public class MonkeyParser extends Parser {
 				_localctx = new PrimitiveExpressionFalseContext(_localctx);
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(128);
+				setState(134);
 				match(FALSE);
 				}
 				break;
@@ -1450,11 +1514,11 @@ public class MonkeyParser extends Parser {
 				_localctx = new PrimitiveExpressionExprContext(_localctx);
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(129);
+				setState(135);
 				match(PIZQ);
-				setState(130);
+				setState(136);
 				expression();
-				setState(131);
+				setState(137);
 				match(PDER);
 				}
 				break;
@@ -1462,7 +1526,7 @@ public class MonkeyParser extends Parser {
 				_localctx = new PrimitiveExpressionArLiteralContext(_localctx);
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(133);
+				setState(139);
 				arrayLiteral();
 				}
 				break;
@@ -1474,13 +1538,13 @@ public class MonkeyParser extends Parser {
 				_localctx = new PrimitiveExpressionArFunctContext(_localctx);
 				enterOuterAlt(_localctx, 8);
 				{
-				setState(134);
+				setState(140);
 				arrayFunctions();
-				setState(135);
+				setState(141);
 				match(PIZQ);
-				setState(136);
+				setState(142);
 				expressionList();
-				setState(137);
+				setState(143);
 				match(PDER);
 				}
 				break;
@@ -1488,7 +1552,7 @@ public class MonkeyParser extends Parser {
 				_localctx = new PrimitiveExpressionFuncLiteralContext(_localctx);
 				enterOuterAlt(_localctx, 9);
 				{
-				setState(139);
+				setState(145);
 				functionLiteral();
 				}
 				break;
@@ -1496,7 +1560,7 @@ public class MonkeyParser extends Parser {
 				_localctx = new PrimitiveExpressionHashLiteralContext(_localctx);
 				enterOuterAlt(_localctx, 10);
 				{
-				setState(140);
+				setState(146);
 				hashLiteral();
 				}
 				break;
@@ -1504,7 +1568,7 @@ public class MonkeyParser extends Parser {
 				_localctx = new PrimitiveExpressionPrintContext(_localctx);
 				enterOuterAlt(_localctx, 11);
 				{
-				setState(141);
+				setState(147);
 				printExpression();
 				}
 				break;
@@ -1512,7 +1576,7 @@ public class MonkeyParser extends Parser {
 				_localctx = new PrimitiveExpressionIfExprContext(_localctx);
 				enterOuterAlt(_localctx, 12);
 				{
-				setState(142);
+				setState(148);
 				ifExpression();
 				}
 				break;
@@ -1563,7 +1627,7 @@ public class MonkeyParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(145);
+			setState(151);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << FIRST) | (1L << LAST) | (1L << LEN) | (1L << REST) | (1L << PUSH))) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -1626,11 +1690,11 @@ public class MonkeyParser extends Parser {
 			_localctx = new ArrayLiteralaContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(147);
+			setState(153);
 			match(PCIZQ);
-			setState(148);
+			setState(154);
 			expressionList();
-			setState(149);
+			setState(155);
 			match(PCDER);
 			}
 		}
@@ -1689,15 +1753,15 @@ public class MonkeyParser extends Parser {
 			_localctx = new FunctionLiteralFnContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(151);
+			setState(157);
 			match(FN);
-			setState(152);
+			setState(158);
 			match(PIZQ);
-			setState(153);
+			setState(159);
 			functionParameters();
-			setState(154);
+			setState(160);
 			match(PDER);
-			setState(155);
+			setState(161);
 			blockStatement();
 			}
 		}
@@ -1751,9 +1815,9 @@ public class MonkeyParser extends Parser {
 			_localctx = new FunctionParametersIdContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(157);
+			setState(163);
 			match(ID);
-			setState(158);
+			setState(164);
 			moreIdentifiers();
 			}
 		}
@@ -1812,19 +1876,19 @@ public class MonkeyParser extends Parser {
 			_localctx = new MoreIdentifiersaContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(164);
+			setState(170);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==COMA) {
 				{
 				{
-				setState(160);
+				setState(166);
 				match(COMA);
-				setState(161);
+				setState(167);
 				match(ID);
 				}
 				}
-				setState(166);
+				setState(172);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -1884,13 +1948,13 @@ public class MonkeyParser extends Parser {
 			_localctx = new HashLiteralaContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(167);
+			setState(173);
 			match(LLAVEIZQ);
-			setState(168);
+			setState(174);
 			hashContent();
-			setState(169);
+			setState(175);
 			moreHashContent();
-			setState(170);
+			setState(176);
 			match(LLAVEDER);
 			}
 		}
@@ -1947,11 +2011,11 @@ public class MonkeyParser extends Parser {
 			_localctx = new HashContentaContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(172);
+			setState(178);
 			expression();
-			setState(173);
+			setState(179);
 			match(DOSPUN);
-			setState(174);
+			setState(180);
 			expression();
 			}
 		}
@@ -2012,19 +2076,19 @@ public class MonkeyParser extends Parser {
 			_localctx = new MoreHashContentaContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(180);
+			setState(186);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==COMA) {
 				{
 				{
-				setState(176);
+				setState(182);
 				match(COMA);
-				setState(177);
+				setState(183);
 				hashContent();
 				}
 				}
-				setState(182);
+				setState(188);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -2053,7 +2117,6 @@ public class MonkeyParser extends Parser {
 		}
 	}
 	public static class ExpressionListNadaContext extends ExpressionListContext {
-		public TerminalNode WS() { return getToken(MonkeyParser.WS, 0); }
 		public ExpressionListNadaContext(ExpressionListContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
@@ -2096,7 +2159,7 @@ public class MonkeyParser extends Parser {
 		ExpressionListContext _localctx = new ExpressionListContext(_ctx, getState());
 		enterRule(_localctx, 46, RULE_expressionList);
 		try {
-			setState(187);
+			setState(193);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case PCIZQ:
@@ -2118,18 +2181,17 @@ public class MonkeyParser extends Parser {
 				_localctx = new ExpressionListaContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(183);
+				setState(189);
 				expression();
-				setState(184);
+				setState(190);
 				moreExpressions();
 				}
 				break;
-			case WS:
+			case PCDER:
+			case PDER:
 				_localctx = new ExpressionListNadaContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(186);
-				match(WS);
 				}
 				break;
 			default:
@@ -2193,19 +2255,19 @@ public class MonkeyParser extends Parser {
 			_localctx = new MoreExpressionsaContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(193);
+			setState(199);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==COMA) {
 				{
 				{
-				setState(189);
+				setState(195);
 				match(COMA);
-				setState(190);
+				setState(196);
 				expression();
 				}
 				}
-				setState(195);
+				setState(201);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -2263,13 +2325,13 @@ public class MonkeyParser extends Parser {
 			_localctx = new PrintExpressionaContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(196);
+			setState(202);
 			match(PUTS);
-			setState(197);
+			setState(203);
 			match(PIZQ);
-			setState(198);
+			setState(204);
 			expression();
-			setState(199);
+			setState(205);
 			match(PDER);
 			}
 		}
@@ -2307,7 +2369,6 @@ public class MonkeyParser extends Parser {
 			return getRuleContext(BlockStatementContext.class,i);
 		}
 		public TerminalNode ELSE() { return getToken(MonkeyParser.ELSE, 0); }
-		public TerminalNode WS() { return getToken(MonkeyParser.WS, 0); }
 		public IfExpressionaContext(IfExpressionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
@@ -2331,27 +2392,58 @@ public class MonkeyParser extends Parser {
 			_localctx = new IfExpressionaContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(201);
-			match(IF);
-			setState(202);
-			expression();
-			setState(203);
-			blockStatement();
 			setState(207);
+			match(IF);
+			setState(208);
+			expression();
+			setState(209);
+			blockStatement();
+			setState(213);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case ELSE:
 				{
-				setState(204);
+				setState(210);
 				match(ELSE);
-				setState(205);
+				setState(211);
 				blockStatement();
 				}
 				break;
-			case WS:
+			case EOF:
+			case PCIZQ:
+			case PCDER:
+			case PyCOMA:
+			case PIZQ:
+			case PDER:
+			case LLAVEDER:
+			case LLAVEIZQ:
+			case DOSPUN:
+			case SUMA:
+			case RESTA:
+			case MUL:
+			case DIV:
+			case MAYORK:
+			case MENORK:
+			case MENORIGUALK:
+			case MAYORIGUALK:
+			case II:
+			case LET:
+			case RETURN:
+			case IF:
+			case TRUE:
+			case FALSE:
+			case FIRST:
+			case LAST:
+			case FN:
+			case PUTS:
+			case COMA:
+			case LEN:
+			case REST:
+			case PUSH:
+			case ID:
+			case STRING:
+			case INT:
 				{
-				setState(206);
-				match(WS);
 				}
 				break;
 			default:
@@ -2414,23 +2506,23 @@ public class MonkeyParser extends Parser {
 			_localctx = new BlockStatementaContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(209);
+			setState(215);
 			match(LLAVEIZQ);
-			setState(213);
+			setState(219);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << PCIZQ) | (1L << PIZQ) | (1L << LLAVEIZQ) | (1L << LET) | (1L << RETURN) | (1L << IF) | (1L << TRUE) | (1L << FALSE) | (1L << FIRST) | (1L << LAST) | (1L << FN) | (1L << PUTS) | (1L << LEN) | (1L << REST) | (1L << PUSH) | (1L << ID) | (1L << STRING) | (1L << INT))) != 0)) {
 				{
 				{
-				setState(210);
+				setState(216);
 				statement();
 				}
 				}
-				setState(215);
+				setState(221);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(216);
+			setState(222);
 			match(LLAVEDER);
 			}
 		}
@@ -2446,73 +2538,76 @@ public class MonkeyParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3*\u00dd\4\2\t\2\4"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3*\u00e3\4\2\t\2\4"+
 		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
 		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
 		"\4\32\t\32\4\33\t\33\4\34\t\34\4\35\t\35\3\2\7\2<\n\2\f\2\16\2?\13\2\3"+
-		"\3\3\3\3\3\3\3\3\3\5\3F\n\3\3\4\3\4\3\4\3\4\3\4\3\5\3\5\3\5\3\6\3\6\3"+
-		"\6\3\7\3\7\3\7\3\b\3\b\7\bX\n\b\f\b\16\b[\13\b\3\t\3\t\3\t\3\n\3\n\7\n"+
-		"b\n\n\f\n\16\ne\13\n\3\13\3\13\3\13\3\f\3\f\7\fl\n\f\f\f\16\fo\13\f\3"+
-		"\r\3\r\3\r\3\r\5\ru\n\r\3\16\3\16\3\16\3\16\3\17\3\17\3\17\3\17\3\20\3"+
-		"\20\3\20\3\20\3\20\3\20\3\20\3\20\3\20\3\20\3\20\3\20\3\20\3\20\3\20\3"+
-		"\20\3\20\3\20\3\20\5\20\u0092\n\20\3\21\3\21\3\22\3\22\3\22\3\22\3\23"+
-		"\3\23\3\23\3\23\3\23\3\23\3\24\3\24\3\24\3\25\3\25\7\25\u00a5\n\25\f\25"+
-		"\16\25\u00a8\13\25\3\26\3\26\3\26\3\26\3\26\3\27\3\27\3\27\3\27\3\30\3"+
-		"\30\7\30\u00b5\n\30\f\30\16\30\u00b8\13\30\3\31\3\31\3\31\3\31\5\31\u00be"+
-		"\n\31\3\32\3\32\7\32\u00c2\n\32\f\32\16\32\u00c5\13\32\3\33\3\33\3\33"+
-		"\3\33\3\33\3\34\3\34\3\34\3\34\3\34\3\34\5\34\u00d2\n\34\3\35\3\35\7\35"+
-		"\u00d6\n\35\f\35\16\35\u00d9\13\35\3\35\3\35\3\35\2\2\36\2\4\6\b\n\f\16"+
-		"\20\22\24\26\30\32\34\36 \"$&(*,.\60\62\64\668\2\7\4\2\5\5**\3\2\20\24"+
-		"\3\2\f\r\3\2\16\17\4\2\37 $&\2\u00d9\2=\3\2\2\2\4E\3\2\2\2\6G\3\2\2\2"+
-		"\bL\3\2\2\2\nO\3\2\2\2\fR\3\2\2\2\16Y\3\2\2\2\20\\\3\2\2\2\22c\3\2\2\2"+
-		"\24f\3\2\2\2\26m\3\2\2\2\30p\3\2\2\2\32v\3\2\2\2\34z\3\2\2\2\36\u0091"+
-		"\3\2\2\2 \u0093\3\2\2\2\"\u0095\3\2\2\2$\u0099\3\2\2\2&\u009f\3\2\2\2"+
-		"(\u00a6\3\2\2\2*\u00a9\3\2\2\2,\u00ae\3\2\2\2.\u00b6\3\2\2\2\60\u00bd"+
-		"\3\2\2\2\62\u00c3\3\2\2\2\64\u00c6\3\2\2\2\66\u00cb\3\2\2\28\u00d3\3\2"+
-		"\2\2:<\5\4\3\2;:\3\2\2\2<?\3\2\2\2=;\3\2\2\2=>\3\2\2\2>\3\3\2\2\2?=\3"+
-		"\2\2\2@A\7\25\2\2AF\5\6\4\2BC\7\26\2\2CF\5\b\5\2DF\5\n\6\2E@\3\2\2\2E"+
-		"B\3\2\2\2ED\3\2\2\2F\5\3\2\2\2GH\7\'\2\2HI\7\13\2\2IJ\5\f\7\2JK\t\2\2"+
-		"\2K\7\3\2\2\2LM\5\f\7\2MN\t\2\2\2N\t\3\2\2\2OP\5\f\7\2PQ\t\2\2\2Q\13\3"+
-		"\2\2\2RS\5\20\t\2ST\5\16\b\2T\r\3\2\2\2UV\t\3\2\2VX\5\20\t\2WU\3\2\2\2"+
-		"X[\3\2\2\2YW\3\2\2\2YZ\3\2\2\2Z\17\3\2\2\2[Y\3\2\2\2\\]\5\24\13\2]^\5"+
-		"\22\n\2^\21\3\2\2\2_`\t\4\2\2`b\5\24\13\2a_\3\2\2\2be\3\2\2\2ca\3\2\2"+
-		"\2cd\3\2\2\2d\23\3\2\2\2ec\3\2\2\2fg\5\30\r\2gh\5\26\f\2h\25\3\2\2\2i"+
-		"j\t\5\2\2jl\5\30\r\2ki\3\2\2\2lo\3\2\2\2mk\3\2\2\2mn\3\2\2\2n\27\3\2\2"+
-		"\2om\3\2\2\2pt\5\36\20\2qu\5\32\16\2ru\5\34\17\2su\7*\2\2tq\3\2\2\2tr"+
-		"\3\2\2\2ts\3\2\2\2u\31\3\2\2\2vw\7\3\2\2wx\5\f\7\2xy\7\4\2\2y\33\3\2\2"+
-		"\2z{\7\6\2\2{|\5\60\31\2|}\7\7\2\2}\35\3\2\2\2~\u0092\7)\2\2\177\u0092"+
-		"\7(\2\2\u0080\u0092\7\'\2\2\u0081\u0092\7\35\2\2\u0082\u0092\7\36\2\2"+
-		"\u0083\u0084\7\6\2\2\u0084\u0085\5\f\7\2\u0085\u0086\7\7\2\2\u0086\u0092"+
-		"\3\2\2\2\u0087\u0092\5\"\22\2\u0088\u0089\5 \21\2\u0089\u008a\7\6\2\2"+
-		"\u008a\u008b\5\60\31\2\u008b\u008c\7\7\2\2\u008c\u0092\3\2\2\2\u008d\u0092"+
-		"\5$\23\2\u008e\u0092\5*\26\2\u008f\u0092\5\64\33\2\u0090\u0092\5\66\34"+
-		"\2\u0091~\3\2\2\2\u0091\177\3\2\2\2\u0091\u0080\3\2\2\2\u0091\u0081\3"+
-		"\2\2\2\u0091\u0082\3\2\2\2\u0091\u0083\3\2\2\2\u0091\u0087\3\2\2\2\u0091"+
-		"\u0088\3\2\2\2\u0091\u008d\3\2\2\2\u0091\u008e\3\2\2\2\u0091\u008f\3\2"+
-		"\2\2\u0091\u0090\3\2\2\2\u0092\37\3\2\2\2\u0093\u0094\t\6\2\2\u0094!\3"+
-		"\2\2\2\u0095\u0096\7\3\2\2\u0096\u0097\5\60\31\2\u0097\u0098\7\4\2\2\u0098"+
-		"#\3\2\2\2\u0099\u009a\7!\2\2\u009a\u009b\7\6\2\2\u009b\u009c\5&\24\2\u009c"+
-		"\u009d\7\7\2\2\u009d\u009e\58\35\2\u009e%\3\2\2\2\u009f\u00a0\7\'\2\2"+
-		"\u00a0\u00a1\5(\25\2\u00a1\'\3\2\2\2\u00a2\u00a3\7#\2\2\u00a3\u00a5\7"+
-		"\'\2\2\u00a4\u00a2\3\2\2\2\u00a5\u00a8\3\2\2\2\u00a6\u00a4\3\2\2\2\u00a6"+
-		"\u00a7\3\2\2\2\u00a7)\3\2\2\2\u00a8\u00a6\3\2\2\2\u00a9\u00aa\7\t\2\2"+
-		"\u00aa\u00ab\5,\27\2\u00ab\u00ac\5.\30\2\u00ac\u00ad\7\b\2\2\u00ad+\3"+
-		"\2\2\2\u00ae\u00af\5\f\7\2\u00af\u00b0\7\n\2\2\u00b0\u00b1\5\f\7\2\u00b1"+
-		"-\3\2\2\2\u00b2\u00b3\7#\2\2\u00b3\u00b5\5,\27\2\u00b4\u00b2\3\2\2\2\u00b5"+
-		"\u00b8\3\2\2\2\u00b6\u00b4\3\2\2\2\u00b6\u00b7\3\2\2\2\u00b7/\3\2\2\2"+
-		"\u00b8\u00b6\3\2\2\2\u00b9\u00ba\5\f\7\2\u00ba\u00bb\5\62\32\2\u00bb\u00be"+
-		"\3\2\2\2\u00bc\u00be\7*\2\2\u00bd\u00b9\3\2\2\2\u00bd\u00bc\3\2\2\2\u00be"+
-		"\61\3\2\2\2\u00bf\u00c0\7#\2\2\u00c0\u00c2\5\f\7\2\u00c1\u00bf\3\2\2\2"+
-		"\u00c2\u00c5\3\2\2\2\u00c3\u00c1\3\2\2\2\u00c3\u00c4\3\2\2\2\u00c4\63"+
-		"\3\2\2\2\u00c5\u00c3\3\2\2\2\u00c6\u00c7\7\"\2\2\u00c7\u00c8\7\6\2\2\u00c8"+
-		"\u00c9\5\f\7\2\u00c9\u00ca\7\7\2\2\u00ca\65\3\2\2\2\u00cb\u00cc\7\27\2"+
-		"\2\u00cc\u00cd\5\f\7\2\u00cd\u00d1\58\35\2\u00ce\u00cf\7\31\2\2\u00cf"+
-		"\u00d2\58\35\2\u00d0\u00d2\7*\2\2\u00d1\u00ce\3\2\2\2\u00d1\u00d0\3\2"+
-		"\2\2\u00d2\67\3\2\2\2\u00d3\u00d7\7\t\2\2\u00d4\u00d6\5\4\3\2\u00d5\u00d4"+
-		"\3\2\2\2\u00d6\u00d9\3\2\2\2\u00d7\u00d5\3\2\2\2\u00d7\u00d8\3\2\2\2\u00d8"+
-		"\u00da\3\2\2\2\u00d9\u00d7\3\2\2\2\u00da\u00db\7\b\2\2\u00db9\3\2\2\2"+
-		"\17=EYcmt\u0091\u00a6\u00b6\u00bd\u00c3\u00d1\u00d7";
+		"\3\3\3\3\3\3\3\3\3\5\3F\n\3\3\4\3\4\3\4\3\4\3\4\5\4M\n\4\3\5\3\5\3\5\5"+
+		"\5R\n\5\3\6\3\6\3\6\5\6W\n\6\3\7\3\7\3\7\3\b\3\b\7\b^\n\b\f\b\16\ba\13"+
+		"\b\3\t\3\t\3\t\3\n\3\n\7\nh\n\n\f\n\16\nk\13\n\3\13\3\13\3\13\3\f\3\f"+
+		"\7\fr\n\f\f\f\16\fu\13\f\3\r\3\r\3\r\3\r\5\r{\n\r\3\16\3\16\3\16\3\16"+
+		"\3\17\3\17\3\17\3\17\3\20\3\20\3\20\3\20\3\20\3\20\3\20\3\20\3\20\3\20"+
+		"\3\20\3\20\3\20\3\20\3\20\3\20\3\20\3\20\3\20\5\20\u0098\n\20\3\21\3\21"+
+		"\3\22\3\22\3\22\3\22\3\23\3\23\3\23\3\23\3\23\3\23\3\24\3\24\3\24\3\25"+
+		"\3\25\7\25\u00ab\n\25\f\25\16\25\u00ae\13\25\3\26\3\26\3\26\3\26\3\26"+
+		"\3\27\3\27\3\27\3\27\3\30\3\30\7\30\u00bb\n\30\f\30\16\30\u00be\13\30"+
+		"\3\31\3\31\3\31\3\31\5\31\u00c4\n\31\3\32\3\32\7\32\u00c8\n\32\f\32\16"+
+		"\32\u00cb\13\32\3\33\3\33\3\33\3\33\3\33\3\34\3\34\3\34\3\34\3\34\3\34"+
+		"\5\34\u00d8\n\34\3\35\3\35\7\35\u00dc\n\35\f\35\16\35\u00df\13\35\3\35"+
+		"\3\35\3\35\2\2\36\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*,.\60\62"+
+		"\64\668\2\6\3\2\20\24\3\2\f\r\3\2\16\17\4\2\37 $&\2\u00e2\2=\3\2\2\2\4"+
+		"E\3\2\2\2\6G\3\2\2\2\bN\3\2\2\2\nS\3\2\2\2\fX\3\2\2\2\16_\3\2\2\2\20b"+
+		"\3\2\2\2\22i\3\2\2\2\24l\3\2\2\2\26s\3\2\2\2\30v\3\2\2\2\32|\3\2\2\2\34"+
+		"\u0080\3\2\2\2\36\u0097\3\2\2\2 \u0099\3\2\2\2\"\u009b\3\2\2\2$\u009f"+
+		"\3\2\2\2&\u00a5\3\2\2\2(\u00ac\3\2\2\2*\u00af\3\2\2\2,\u00b4\3\2\2\2."+
+		"\u00bc\3\2\2\2\60\u00c3\3\2\2\2\62\u00c9\3\2\2\2\64\u00cc\3\2\2\2\66\u00d1"+
+		"\3\2\2\28\u00d9\3\2\2\2:<\5\4\3\2;:\3\2\2\2<?\3\2\2\2=;\3\2\2\2=>\3\2"+
+		"\2\2>\3\3\2\2\2?=\3\2\2\2@A\7\25\2\2AF\5\6\4\2BC\7\26\2\2CF\5\b\5\2DF"+
+		"\5\n\6\2E@\3\2\2\2EB\3\2\2\2ED\3\2\2\2F\5\3\2\2\2GH\7\'\2\2HI\7\13\2\2"+
+		"IL\5\f\7\2JM\7\5\2\2KM\3\2\2\2LJ\3\2\2\2LK\3\2\2\2M\7\3\2\2\2NQ\5\f\7"+
+		"\2OR\7\5\2\2PR\3\2\2\2QO\3\2\2\2QP\3\2\2\2R\t\3\2\2\2SV\5\f\7\2TW\7\5"+
+		"\2\2UW\3\2\2\2VT\3\2\2\2VU\3\2\2\2W\13\3\2\2\2XY\5\20\t\2YZ\5\16\b\2Z"+
+		"\r\3\2\2\2[\\\t\2\2\2\\^\5\20\t\2][\3\2\2\2^a\3\2\2\2_]\3\2\2\2_`\3\2"+
+		"\2\2`\17\3\2\2\2a_\3\2\2\2bc\5\24\13\2cd\5\22\n\2d\21\3\2\2\2ef\t\3\2"+
+		"\2fh\5\24\13\2ge\3\2\2\2hk\3\2\2\2ig\3\2\2\2ij\3\2\2\2j\23\3\2\2\2ki\3"+
+		"\2\2\2lm\5\30\r\2mn\5\26\f\2n\25\3\2\2\2op\t\4\2\2pr\5\30\r\2qo\3\2\2"+
+		"\2ru\3\2\2\2sq\3\2\2\2st\3\2\2\2t\27\3\2\2\2us\3\2\2\2vz\5\36\20\2w{\5"+
+		"\32\16\2x{\5\34\17\2y{\3\2\2\2zw\3\2\2\2zx\3\2\2\2zy\3\2\2\2{\31\3\2\2"+
+		"\2|}\7\3\2\2}~\5\f\7\2~\177\7\4\2\2\177\33\3\2\2\2\u0080\u0081\7\6\2\2"+
+		"\u0081\u0082\5\60\31\2\u0082\u0083\7\7\2\2\u0083\35\3\2\2\2\u0084\u0098"+
+		"\7)\2\2\u0085\u0098\7(\2\2\u0086\u0098\7\'\2\2\u0087\u0098\7\35\2\2\u0088"+
+		"\u0098\7\36\2\2\u0089\u008a\7\6\2\2\u008a\u008b\5\f\7\2\u008b\u008c\7"+
+		"\7\2\2\u008c\u0098\3\2\2\2\u008d\u0098\5\"\22\2\u008e\u008f\5 \21\2\u008f"+
+		"\u0090\7\6\2\2\u0090\u0091\5\60\31\2\u0091\u0092\7\7\2\2\u0092\u0098\3"+
+		"\2\2\2\u0093\u0098\5$\23\2\u0094\u0098\5*\26\2\u0095\u0098\5\64\33\2\u0096"+
+		"\u0098\5\66\34\2\u0097\u0084\3\2\2\2\u0097\u0085\3\2\2\2\u0097\u0086\3"+
+		"\2\2\2\u0097\u0087\3\2\2\2\u0097\u0088\3\2\2\2\u0097\u0089\3\2\2\2\u0097"+
+		"\u008d\3\2\2\2\u0097\u008e\3\2\2\2\u0097\u0093\3\2\2\2\u0097\u0094\3\2"+
+		"\2\2\u0097\u0095\3\2\2\2\u0097\u0096\3\2\2\2\u0098\37\3\2\2\2\u0099\u009a"+
+		"\t\5\2\2\u009a!\3\2\2\2\u009b\u009c\7\3\2\2\u009c\u009d\5\60\31\2\u009d"+
+		"\u009e\7\4\2\2\u009e#\3\2\2\2\u009f\u00a0\7!\2\2\u00a0\u00a1\7\6\2\2\u00a1"+
+		"\u00a2\5&\24\2\u00a2\u00a3\7\7\2\2\u00a3\u00a4\58\35\2\u00a4%\3\2\2\2"+
+		"\u00a5\u00a6\7\'\2\2\u00a6\u00a7\5(\25\2\u00a7\'\3\2\2\2\u00a8\u00a9\7"+
+		"#\2\2\u00a9\u00ab\7\'\2\2\u00aa\u00a8\3\2\2\2\u00ab\u00ae\3\2\2\2\u00ac"+
+		"\u00aa\3\2\2\2\u00ac\u00ad\3\2\2\2\u00ad)\3\2\2\2\u00ae\u00ac\3\2\2\2"+
+		"\u00af\u00b0\7\t\2\2\u00b0\u00b1\5,\27\2\u00b1\u00b2\5.\30\2\u00b2\u00b3"+
+		"\7\b\2\2\u00b3+\3\2\2\2\u00b4\u00b5\5\f\7\2\u00b5\u00b6\7\n\2\2\u00b6"+
+		"\u00b7\5\f\7\2\u00b7-\3\2\2\2\u00b8\u00b9\7#\2\2\u00b9\u00bb\5,\27\2\u00ba"+
+		"\u00b8\3\2\2\2\u00bb\u00be\3\2\2\2\u00bc\u00ba\3\2\2\2\u00bc\u00bd\3\2"+
+		"\2\2\u00bd/\3\2\2\2\u00be\u00bc\3\2\2\2\u00bf\u00c0\5\f\7\2\u00c0\u00c1"+
+		"\5\62\32\2\u00c1\u00c4\3\2\2\2\u00c2\u00c4\3\2\2\2\u00c3\u00bf\3\2\2\2"+
+		"\u00c3\u00c2\3\2\2\2\u00c4\61\3\2\2\2\u00c5\u00c6\7#\2\2\u00c6\u00c8\5"+
+		"\f\7\2\u00c7\u00c5\3\2\2\2\u00c8\u00cb\3\2\2\2\u00c9\u00c7\3\2\2\2\u00c9"+
+		"\u00ca\3\2\2\2\u00ca\63\3\2\2\2\u00cb\u00c9\3\2\2\2\u00cc\u00cd\7\"\2"+
+		"\2\u00cd\u00ce\7\6\2\2\u00ce\u00cf\5\f\7\2\u00cf\u00d0\7\7\2\2\u00d0\65"+
+		"\3\2\2\2\u00d1\u00d2\7\27\2\2\u00d2\u00d3\5\f\7\2\u00d3\u00d7\58\35\2"+
+		"\u00d4\u00d5\7\31\2\2\u00d5\u00d8\58\35\2\u00d6\u00d8\3\2\2\2\u00d7\u00d4"+
+		"\3\2\2\2\u00d7\u00d6\3\2\2\2\u00d8\67\3\2\2\2\u00d9\u00dd\7\t\2\2\u00da"+
+		"\u00dc\5\4\3\2\u00db\u00da\3\2\2\2\u00dc\u00df\3\2\2\2\u00dd\u00db\3\2"+
+		"\2\2\u00dd\u00de\3\2\2\2\u00de\u00e0\3\2\2\2\u00df\u00dd\3\2\2\2\u00e0"+
+		"\u00e1\7\b\2\2\u00e19\3\2\2\2\22=ELQV_isz\u0097\u00ac\u00bc\u00c3\u00c9"+
+		"\u00d7\u00dd";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

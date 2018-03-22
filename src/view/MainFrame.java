@@ -1,6 +1,7 @@
 package view;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -298,10 +299,11 @@ public class MainFrame extends JFrame{
 
         console.setColumns(20);
         console.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        console.setForeground(Color.RED);
         console.setLineWrap(true);
         console.setRows(5);
-        console.setEnabled(false);
-        console.setBackground(new java.awt.Color(51, 51, 51));
+        console.setEnabled(true);
+        console.setBackground(Color.LIGHT_GRAY);
         console.setText("Console!");
         jScrollPane2.setViewportView(console);
 

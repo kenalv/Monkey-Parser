@@ -8,9 +8,9 @@ program : statement*                                                        #pro
 statement: LET letStatement                                                    #statementLet
                 |RETURN returnStatement                                        #statementReturn
                 |expressionStatement                                           #statementExpr;
-letStatement: ID EQUAL expression ( PyCOMA | WS )                              #letStatementId;
-returnStatement: expression (PyCOMA | WS)                                      #returnStatementa;
-expressionStatement: expression(PyCOMA | WS)                                   #expressionStatementa;
+letStatement: ID EQUAL expression ( PyCOMA | )                              #letStatementId;
+returnStatement: expression (PyCOMA | )                                      #returnStatementa;
+expressionStatement: expression(PyCOMA | )                                   #expressionStatementa;
 expression: additionExpression comparison                                      #expressiona;
 comparison: ((MAYORK
                 | MENORK
@@ -21,7 +21,7 @@ additionExpression: multiplicationExpression additionFactor                    #
 additionFactor: (( SUMA | RESTA ) multiplicationExpression)*                   #additionFactorDesignator;
 multiplicationExpression: elementExpression multiplicationFactor               #multiplicationExpressiona;
 multiplicationFactor: (( MUL | DIV ) elementExpression )*                      #multiplicationFactora;
-elementExpression: primitiveExpression (elementAccess | callExpression | WS)   #elementExpressiona;
+elementExpression: primitiveExpression (elementAccess | callExpression | )   #elementExpressiona;
 elementAccess    : PCIZQ expression PCDER                                      #elementAccessa;
 callExpression: PIZQ expressionList PDER                                       #callExpressionExprL;
 primitiveExpression: INT                                                       #primitiveExpressionInt
@@ -49,8 +49,8 @@ hashLiteral: LLAVEIZQ hashContent moreHashContent LLAVEDER                     #
 hashContent: expression DOSPUN expression                                      #hashContenta;
 moreHashContent: (COMA hashContent )*                                          #moreHashContenta;
 expressionList: expression moreExpressions                                     #expressionLista
-                | WS                                                           #expressionListNada;
+                |                                                            #expressionListNada;
 moreExpressions: (COMA expression )*                                           #moreExpressionsa;
 printExpression: PUTS PIZQ expression PDER                                     #printExpressiona;
-ifExpression: IF expression blockStatement (ELSE blockStatement | WS)          #ifExpressiona;
+ifExpression: IF expression blockStatement (ELSE blockStatement | )          #ifExpressiona;
 blockStatement: LLAVEIZQ statement* LLAVEDER                                   #blockStatementa;
