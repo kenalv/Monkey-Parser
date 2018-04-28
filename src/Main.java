@@ -1,4 +1,3 @@
-
 import generated.MonkeyParser;
 import generated.MonkeyScanner;
 import generated.NiceError;

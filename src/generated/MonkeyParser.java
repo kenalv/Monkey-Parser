@@ -1,4 +1,4 @@
-// Generated from C:/Users/Kenneth/IdeaProjects/MonkeyParser/Monkey-Parser\MonkeyParser.g4 by ANTLR 4.7
+// Generated from /home/ginko-san/Monkey-Parser-master/MonkeyParser.g4 by ANTLR 4.7
 package generated;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -21,7 +21,8 @@ public class MonkeyParser extends Parser {
 		EQUAL=9, SUMA=10, RESTA=11, MUL=12, DIV=13, MAYORK=14, MENORK=15, MENORIGUALK=16, 
 		MAYORIGUALK=17, II=18, LET=19, RETURN=20, IF=21, THEN=22, ELSE=23, WHILE=24, 
 		BEGIN=25, END=26, TRUE=27, FALSE=28, FIRST=29, LAST=30, FN=31, PUTS=32, 
-		COMA=33, LEN=34, REST=35, PUSH=36, ID=37, STRING=38, INT=39, WS=40;
+		COMA=33, LEN=34, REST=35, PUSH=36, ID=37, STRING=38, INT=39, WS=40, COMMENT=41, 
+		LINE_COMMENT=42;
 	public static final int
 		RULE_program = 0, RULE_statement = 1, RULE_letStatement = 2, RULE_returnStatement = 3, 
 		RULE_expressionStatement = 4, RULE_expression = 5, RULE_comparison = 6, 
@@ -53,7 +54,8 @@ public class MonkeyParser extends Parser {
 		"DOSPUN", "EQUAL", "SUMA", "RESTA", "MUL", "DIV", "MAYORK", "MENORK", 
 		"MENORIGUALK", "MAYORIGUALK", "II", "LET", "RETURN", "IF", "THEN", "ELSE", 
 		"WHILE", "BEGIN", "END", "TRUE", "FALSE", "FIRST", "LAST", "FN", "PUTS", 
-		"COMA", "LEN", "REST", "PUSH", "ID", "STRING", "INT", "WS"
+		"COMA", "LEN", "REST", "PUSH", "ID", "STRING", "INT", "WS", "COMMENT", 
+		"LINE_COMMENT"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
@@ -2538,7 +2540,7 @@ public class MonkeyParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3*\u00e3\4\2\t\2\4"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3,\u00e3\4\2\t\2\4"+
 		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
 		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+

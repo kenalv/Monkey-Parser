@@ -48,11 +48,16 @@ ID : LETTER (LETTER | DIGIT)*;
 
 //STRING
 STRING : '"' LETTER (LETTER)* '"';
+
 //LITERAL
 INT : DIGIT DIGIT*;
 
 //MACROS
-fragment LETTER : 'a'..'z';
+fragment LETTER : 'a'..'z' | 'A'..'Z';
 fragment DIGIT : '0'..'9';
 
 WS : [ \t\n\r]+ -> skip;
+
+COMMENT : '/*' .*? '*/' -> skip;
+
+LINE_COMMENT : '//' ~[\r\n]* -> skip;

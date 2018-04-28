@@ -16,6 +16,8 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.event.CaretEvent;
+import javax.swing.event.CaretListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import generated.MonkeyParser;
 import generated.MonkeyScanner;
@@ -176,15 +178,40 @@ public class MainFrame extends JFrame{
 
                 ParseTree tree = parser.program(); //se ejecuta el parser
                 //se habre el AST grafico
-                java.util.concurrent.Future <JFrame> treeGUI = org.antlr.v4.gui.Trees.inspect(tree,parser);
+                if (errors.size() == 0) {
+                    java.util.concurrent.Future <JFrame> treeGUI = org.antlr.v4.gui.Trees.inspect(tree,parser);
+                    console.setText("Compilación Exitosa!");
+                } else {
 
-                //Se obtienen los errores y se cocatenan en un solo string para enviarlo a la consola grafica.
-                String cocatenateErrors = "";
-                for (String s : errors)
-                    cocatenateErrors += s + "\n";
+                    //Se obtienen los errores y se cocatenan en un solo string para enviarlo a la consola grafica.
+                    String cocatenateErrors = "";
+                    for (String s : errors)
+                        cocatenateErrors += s + "\n";
 
-                // se agregan los errores a la consola gráfica
-                console.setText(cocatenateErrors);
+                    // se agregan los errores a la consola gráfica
+                    console.setText(cocatenateErrors);
+                }
+            }
+        });
+        display.addCaretListener(new CaretListener() {
+            @Override
+            public void caretUpdate(CaretEvent e) {
+                JTextArea editArea = (JTextArea)e.getSource();
+
+                int line = 1;
+                int column = 1;
+
+                try {
+                    int caretpos = editArea.getCaretPosition();
+                    line= editArea.getLineOfOffset(caretpos);
+                    column = caretpos - editArea.getLineStartOffset(line);
+
+                    // Ya que las líneas las cuenta desde la 0
+                    line += 1;
+                } catch(Exception ex) { }
+
+                // Actualizamos el estado
+                updateState(line, column);
             }
         });
     }
@@ -232,10 +259,15 @@ public class MainFrame extends JFrame{
     private JToolBar jToolBar1;
     private JTextArea console;
     private JSeparator jSeparator1;
+    private JTextField jTextFieldPos;
     private JFileChooser fileOpener;
     private JFileChooser saveDialog;
     private JScrollPane jScrollPane1;
     private JScrollPane jScrollPane2;
+
+    private void updateState(int line, int column) {
+        jTextFieldPos.setText("Linea: " + line + ", Columna: " + column);
+    }
 
     private void initComponents() {
         /*
@@ -297,6 +329,11 @@ public class MainFrame extends JFrame{
         display.setRows(5);
         jScrollPane1.setViewportView(display);
 
+        jTextFieldPos.setColumns(20);
+        jTextFieldPos.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        jTextFieldPos.setText("Linea: 0, Columna: 0");
+        jTextFieldPos.setEnabled(false);
+
         console.setColumns(20);
         console.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         console.setForeground(Color.RED);
@@ -316,6 +353,7 @@ public class MainFrame extends JFrame{
                 jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addComponent(jToolBar1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 662, Short.MAX_VALUE)
+                        .addComponent(jTextFieldPos, GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                         .addComponent(jScrollPane2, GroupLayout.DEFAULT_SIZE, 562, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
@@ -324,6 +362,8 @@ public class MainFrame extends JFrame{
                                 .addComponent(jToolBar1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldPos, GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jScrollPane2, GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED))

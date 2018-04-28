@@ -4,13 +4,13 @@ options {
     tokenVocab = MonkeyScanner;
 }
 
-program : statement*                                                        #programa;
+program : statement*                                                           #programa;
 statement: LET letStatement                                                    #statementLet
                 |RETURN returnStatement                                        #statementReturn
                 |expressionStatement                                           #statementExpr;
-letStatement: ID EQUAL expression ( PyCOMA | )                              #letStatementId;
-returnStatement: expression (PyCOMA | )                                      #returnStatementa;
-expressionStatement: expression(PyCOMA | )                                   #expressionStatementa;
+letStatement: ID EQUAL expression ( PyCOMA | )                                 #letStatementId;
+returnStatement: expression (PyCOMA | )                                        #returnStatementa;
+expressionStatement: expression(PyCOMA | )                                     #expressionStatementa;
 expression: additionExpression comparison                                      #expressiona;
 comparison: ((MAYORK
                 | MENORK
@@ -21,7 +21,7 @@ additionExpression: multiplicationExpression additionFactor                    #
 additionFactor: (( SUMA | RESTA ) multiplicationExpression)*                   #additionFactorDesignator;
 multiplicationExpression: elementExpression multiplicationFactor               #multiplicationExpressiona;
 multiplicationFactor: (( MUL | DIV ) elementExpression )*                      #multiplicationFactora;
-elementExpression: primitiveExpression (elementAccess | callExpression | )   #elementExpressiona;
+elementExpression: primitiveExpression (elementAccess | callExpression | )     #elementExpressiona;
 elementAccess    : PCIZQ expression PCDER                                      #elementAccessa;
 callExpression: PIZQ expressionList PDER                                       #callExpressionExprL;
 primitiveExpression: INT                                                       #primitiveExpressionInt

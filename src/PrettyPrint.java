@@ -1,4 +1,3 @@
-
 import generated.MonkeyParser;
 import generated.MonkeyParserBaseVisitor;
 
@@ -24,7 +23,7 @@ public class PrettyPrint extends MonkeyParserBaseVisitor {
         }
 
         return null;
-    }
+    }/*
 //statement: LET letStatement                                                    #statementLet
     @Override
     public Object visitStatementLet(MonkeyParser.StatementLetContext ctx) {
@@ -62,7 +61,7 @@ public class PrettyPrint extends MonkeyParserBaseVisitor {
         cont--;
         return null;
 
-    }
+    }*/
 //letStatement: ID EQUAL expression ( PyCOMA | WS )                              #letStatementId;
     @Override
     public Object visitLetStatementId(MonkeyParser.LetStatementIdContext ctx) {
